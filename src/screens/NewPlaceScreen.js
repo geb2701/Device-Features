@@ -46,7 +46,7 @@ const NewPlaceScreen = ({ navigation, route }) => {
         />
         <Button
           title="Grabar direccion"
-          color={COLORS.MAROON}
+          color={COLORS.Red}
           onPress={handleSave}
         />
       </View>

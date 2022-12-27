@@ -20,10 +20,10 @@ const PlaceNavigator = () => {
         screenOptions={{
           headerStyle: {
             backgroundColor:
-              Platform.OS === "android" ? COLORS.DARK_SIENNA : "",
+              Platform.OS === "android" ? COLORS.Light_Green : "",
           },
           headerTintColor:
-            Platform.OS === "android" ? "white" : COLORS.DARK_SIENNA,
+            Platform.OS === "android" ? "white" : COLORS.Light_Green,
           headerTitleStyle: {
             fontWeight: "bold",
           },
@@ -39,7 +39,7 @@ const PlaceNavigator = () => {
                 <Ionicons
                   name="md-add"
                   color={
-                    Platform.OS === "android" ? "white" : COLORS.DARK_SIENNA
+                    Platform.OS === "android" ? "white" : COLORS.Light_Green
                   }
                   size={23}
                 />

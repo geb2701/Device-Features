@@ -70,7 +70,7 @@ const LocationSelector = ({ onLocation, mapLocation }) => {
         />
         <Button
           title="Elegir del Mapa"
-          color={COLORS.LIGTH_PINK}
+          color={COLORS.Light_Pink}
           onPress={handlePickOnMap}
         />
       </View>
@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     justifyContent: "center",
     alignItems: "center",
-    borderColor: COLORS.BLUSH,
+    borderColor: COLORS.Yellow,
     borderWidth: 1,
   },
   image: {
