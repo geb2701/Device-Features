@@ -1,7 +1,9 @@
 import * as FileSystem from "expo-file-system";
 import Map from "../constants/Map";
+import { insertAddress, fetchAddress } from "../db";
 
 export const ADD_PLACE = "ADD_PLACE";
+export const LOAD_PLACES = "LOAD_PLACES";
 
 export const addPlace = (title, image, location) => {
   return async (dispatch) => {
@@ -13,6 +15,7 @@ export const addPlace = (title, image, location) => {
       throw new Error("No se ha podido comunicar con Google Mas API");
 
     const resData = await response.json();
+    console.log(resData)
 
     if (!resData.results)
       throw new Error(
@@ -20,8 +23,6 @@ export const addPlace = (title, image, location) => {
       );
 
     const address = resData.results[0].formatted_address;
-    console.log(address);
-    console.log(location)
 
     const fileName = image.split("/").pop();
     const Path = FileSystem.documentDirectory + fileName;
@@ -31,6 +32,14 @@ export const addPlace = (title, image, location) => {
         from: image,
         to: Path,
       });
+      const result = await insertAddress(
+        title,
+        Path,
+        address,
+        location.lat,
+        location.lng
+      );
+      console.log(result);
     } catch (err) {
       console.log(err.message);
       throw err;
@@ -45,5 +54,17 @@ export const addPlace = (title, image, location) => {
         lng: location.lng,
       },
     });
+  };
+};
+
+export const loadAddress = () => {
+  return async (dispatch) => {
+    try {
+      const result = await fetchAddress();
+      console.log(result);
+      dispatch({ type: LOAD_PLACES, places: result.rows._array });
+    } catch (error) {
+      throw err;
+    }
   };
 };

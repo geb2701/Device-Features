@@ -10,10 +10,6 @@ const PlaceDetailScreen = ({ route }) => {
     state.places.places.find((item) => item.id === placeId)
   );
 
-  useEffect(() => {
-    console.log(place);
-  }, []);
-
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.textContainer}>

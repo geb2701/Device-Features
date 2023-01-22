@@ -6,10 +6,6 @@ import PlaceItem from "../components/PlaceItem";
 const PlaceListScreen = ({ navigation }) => {
   const places = useSelector((state) => state.places.places);
 
-  useEffect(() => {
-    console.log(places);
-  }, [places]);
-
   const renderItem = ({ item }) => (
     <PlaceItem
       title={item.title}

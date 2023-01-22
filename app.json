@@ -1,18 +1,23 @@
 {
   "expo": {
-    "name": "MapsApp",
-    "slug": "MapsApp",
+    "name": "ProyectoFinal",
+    "slug": "proyecto-final",
     "version": "1.0.0",
+    "platforms": [
+      "ios",
+      "android"
+    ],
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/Icono.jpg",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#E8F7FC"
     },
     "updates": {
-      "fallbackToCacheTimeout": 0
+      "fallbackToCacheTimeout": 0,
+      "url": "https://u.expo.dev/71ccd3e4-159e-4f93-b399-28d1dc5e7660"
     },
     "assetBundlePatterns": [
       "**/*"
@@ -23,11 +28,21 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
-      }
+        "backgroundColor": "#E8F7FC"
+      },
+      "package": "com.geb2701.proyectofinal"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "71ccd3e4-159e-4f93-b399-28d1dc5e7660"
+      }
+    },
+    "owner": "geb2701",
+    "runtimeVersion": {
+      "policy": "appVersion"
     }
   }
 }
